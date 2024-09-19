@@ -4,6 +4,7 @@ import Home from './components/Home';
 import HeroSection from './components/HeroSection';
 import Courses from './components/Courses';
 import Faqs from './components/Faqs';
+import DataSciencePage from './components/CoursesData';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/herosection" element={<HeroSection />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/faqs" element={<Faqs />} />
+        <Route path="/courses-details" element={<DataSciencePage/>}/>
         {/* <Route path="/" element={<Home />} /> */}
         {/* <Route path="/" element={<Home />} /> */}
 

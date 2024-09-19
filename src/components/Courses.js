@@ -9,6 +9,7 @@ import { CgProfile } from "react-icons/cg";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import { IoIosShareAlt } from "react-icons/io";
 import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -36,7 +37,13 @@ function a11yProps(index) {
 }
 
 const CourseBox = ({ image, heading, paragraphs, price, priceStrikethrough, discount }) => (
-  <div className="course-box">
+  
+  <div className="course-box" 
+  // onClick={()=>{
+
+  //   ("/courses-details")
+  // }}
+  >
     <img src={image} alt={heading} className="course-image" />
     <h1 className="course-heading">
       {heading} <IoIosShareAlt className="share-icon" />
@@ -68,6 +75,8 @@ const CourseBox = ({ image, heading, paragraphs, price, priceStrikethrough, disc
 
 const Courses = () => {
   const [value, setValue] = React.useState(0);
+  const navigate=useNavigate()
+
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -211,7 +220,11 @@ const Courses = () => {
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <div className="course-container">
+          <div className="course-container"
+          onClick={()=>{
+            navigate("/courses-details")
+          }}
+          >
             {tabContents[0].map((content, idx) => (
               <CourseBox key={idx} {...content} />
             ))}
