@@ -222,7 +222,7 @@ const Courses = () => {
         <CustomTabPanel value={value} index={0}>
           <div className="course-container"
           onClick={()=>{
-            navigate("/courses-details")
+            navigate("/coursedetails")
           }}
           >
             {tabContents[0].map((content, idx) => (

@@ -5,6 +5,8 @@ import HeroSection from './components/HeroSection';
 import Courses from './components/Courses';
 import Faqs from './components/Faqs';
 import DataSciencePage from './components/CoursesData';
+import CourseIntro from './components/CoursesComponents/CourseIntro';
+import CourseDetails from './components/CoursesComponents/CourseDetails';
 
 function App() {
   return (
@@ -14,9 +16,9 @@ function App() {
         <Route path="/herosection" element={<HeroSection />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/faqs" element={<Faqs />} />
-        <Route path="/courses-details" element={<DataSciencePage/>}/>
-        {/* <Route path="/" element={<Home />} /> */}
-        {/* <Route path="/" element={<Home />} /> */}
+        {/* <Route path="/courses-details" element={<DataSciencePage/>}/> */}
+        <Route path="/" element={<CourseIntro />} />
+        <Route path="/coursedetails" element={<CourseDetails />} />
 
         </Routes>
     </React.Fragment>
