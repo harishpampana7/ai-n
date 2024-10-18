@@ -87,9 +87,7 @@
     font-size: 16px;
   }
 
-  .dt-container {
-   /* display: none; */
-}
+ 
 }
 
 
@@ -130,7 +128,7 @@
     display: flex;
     flex-direction: column;
     gap: 4rem; /* Gap between items */
-    padding: 2rem 1rem; /* Default padding for small screens */
+    padding: 0.75rem; /* Default padding for small screens */
   }
   
   .dt-item {
@@ -163,7 +161,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
-      padding: 2.75rem;
+      padding: 0.75rem;
     }
   
     .dt-item {

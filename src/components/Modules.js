@@ -7,10 +7,10 @@ import {
   List,
   ListItem,
   ListItemText,
-  Container,
   Box
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Container } from 'react-bootstrap';
 
 const modules = [
     {
@@ -306,6 +306,11 @@ const modules = [
   
   const CourseAccordion = () => {
     return (
+      <Container className="mt-5">
+             <Typography variant="h5" align="left" gutterBottom>
+        <span style={{ borderLeft: '4px solid #203864', paddingLeft: '8px' }}>Carefully Curated Curriculum
+        </span>
+      </Typography>
       <Box
         sx={{
           height: '500px', // Set the height of the parent container
@@ -315,6 +320,7 @@ const modules = [
           width:"80%",
           margin:"auto",
           marginTop:"30px",
+          
         }}
       >
         {modules.map((module, index) => (
@@ -334,6 +340,8 @@ const modules = [
           </Accordion>
         ))}
       </Box>
+      </Container>
+      
     );
   };
   

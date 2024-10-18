@@ -4,6 +4,9 @@ import HeroSection from './HeroSection';
 import Courses from './Courses';
 import Faqs from './Faqs';
 import Footer from './Footer';
+import Choose from './Choose';
+import { Container } from '@mui/material';
+import HiringData from './HiringData';
 
 const Home = () => {
   return (
@@ -14,6 +17,8 @@ const Home = () => {
     <HeroSection />
 
     <Courses  />
+    <Choose/>
+    <HiringData/>
 
     <Faqs />
 

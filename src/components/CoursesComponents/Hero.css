@@ -1,0 +1,373 @@
+
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .hero-box {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .hero-text {
+    text-align: left;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #354c99;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    max-width: 500px; 
+  }
+
+  
+
+  @media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .hero-image {
+      order: 2;
+    }
+  
+    .hero-text {
+      order: 1;
+    }
+  
+    .hero-text button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  
+  .typewriter {
+    display: inline-block;
+    overflow: hidden; 
+    white-space: nowrap;
+    border-right: .15em solid #354c99; 
+    animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+    color: #354c99;
+  }
+  
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .typewriter {
+      font-size: 1.5rem; 
+      animation: typing 3s steps(20, end), blink-caret .75s step-end infinite; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .typewriter {
+      font-size: 1rem; 
+      animation: typing 2s steps(15, end), blink-caret .75s step-end infinite; 
+    }
+  }
+  
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.0rem; 
+    padding-top: 2rem; 
+    
+    position: relative;
+    z-index: 10;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    padding-top: 0px;
+  }
+  
+  .stats-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem; 
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem; 
+    gap: 1rem; 
+    width: 100%;
+    margin: 0.5rem; 
+  }
+  
+  .stats-image {
+    width: 3rem; 
+    height: 3rem; 
+  }
+  
+  .stats-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stats-title {
+    font-size: 1.125rem; 
+    font-weight: bold;
+    color: #4a4a4a; 
+  }
+  
+  .stats-description {
+    font-size: 0.75rem; 
+    color: #4a4a4a; 
+  }
+  
+  
+  
+  @media (min-width: 768px) {
+    .stats-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.25rem; 
+    }
+  
+    .stats-box {
+      width: 12rem; 
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .stats-box {
+      width: 16%; 
+    }
+
+    .hero-section {
+      
+      width: 80%;
+     
+  }
+
+  .stats-container {
+    width: 80%;
+}
+  }
+  
+.course-intro-m{
+  width: 100%;
+  background-color: #1a202c;
+  margin-top: 0%;
+  margin-bottom: 100px;
+  color: #fff;
+}
+.course-hero-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  /* width: 70%; */
+  margin: auto;
+  align-items: center;
+  margin-top: 30px;
+  padding: 50px;
+}
+
+.courses-details--info {
+  padding: 20px;
+}
+
+.courses-details--details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.courses-details--details li {
+  padding: 5px 0;
+}
+
+.courses-details--pricing {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  margin: auto;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: left;
+
+}
+
+.courses-details--price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.courses-details--discount {
+  font-size: 24px;
+  color: #d9534f; /* Red color for discount */
+  text-decoration: line-through;
+}
+
+.courses-details--discount-label {
+  font-size: 18px;
+  color: #69eb05; /* Blue color for discount label */
+  margin-left: 10px;
+  text-decoration: blink;
+}
+
+.course-intro-m button{
+  background-color: #fff;
+  color: #1a202c;
+  width: 35%;
+  height: 35%;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .courses-details--pricing {
+    text-align: center;
+  }
+
+  .courses-details--price {
+    font-size: 20px;
+  }
+
+  .courses-details--discount {
+    font-size: 20px;
+  }
+
+  .courses-details--discount-label {
+    font-size: 16px;
+  }
+
+ 
+}
+
+
+@media (max-width: 768px) {
+  .course-hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+
+  .course-hero-section {
+    
+    width: 80%;
+  }
+}
+
+
+.dt-container {
+    /* position: absolute; */
+    /* margin-top: 100px; */
+    padding: 0 1rem; 
+    max-width: 1248px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 50px; */
+  }
+  
+  .dt-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Gap between items */
+    padding: 0.75rem; /* Default padding for small screens */
+  }
+  
+  .dt-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem; /* Margin bottom for small screens */
+  }
+  
+  .dt-heading {
+    font-size: 1.25rem; /* Default font size */
+    line-height: 0px;
+    font-weight: bold;
+    color: #1a202c; /* Gray 900 */
+  }
+  
+  .dt-subheading {
+    font-size: 0.875rem; /* Default font size */
+    line-height: 0px;
+    color: #757575; /* Gray */
+  }
+  @media (max-width:740px) {
+    .dt-subheading{
+      margin-top: 25px;
+    }
+    
+  }
+  
+  @media (min-width: 640px) {
+    .dt-container {
+      padding: 0 1.5rem; /* Increased padding for larger screens */
+    }
+  
+    .dt-content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 1.5rem;
+    }
+  
+    .dt-item {
+      margin-bottom: 0;
+      margin: 0;
+    }
+  
+    .dt-heading {
+      font-size: 1.5rem; /* Font size for larger screens */
+      line-height: 32px;
+    }
+  
+    .dt-subheading {
+      font-size: 1rem; /* Font size for larger screens */
+      line-height: 24px;
+    }
+  }
+  

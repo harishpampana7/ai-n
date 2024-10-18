@@ -2,7 +2,7 @@
 
 /* Navbar Main Container */
 .navbar-main {
-  height: 58px;
+  height: auto;
 }
 
 .navbar-logo img {
@@ -107,6 +107,7 @@
   align-items: center;
   cursor: pointer;
   font-weight: 600; 
+  border:none;
 }
 
 .navbar-login-btn:hover {
@@ -280,4 +281,16 @@
     height: 146px;
   }
 }
+@media (max-width: 840px) {
+  .show-value
+  {
+    display: none;
+  }
+}
+/* @media only screen and (min-width: 768px) and (max-width: 1440px) {
+  .side{
+  display: none;
+  }
+ } */
+
 

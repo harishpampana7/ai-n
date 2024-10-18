@@ -13,8 +13,11 @@
     line-height: 32px;
     font-weight: bold;
     text-align: center;
-    color: #1f2937; 
+    color: #34495E; 
     width: 100%;
+  }
+  .title p {
+    color:#34495E
   }
   
   .view-all-button {
@@ -87,6 +90,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
+    color:#34495E
   }
   
   .share-icon {
@@ -99,6 +103,7 @@
   .course-paragraphs {
     margin: 20px 0;
     padding: 0px 10px;
+    color:#34495E
   }
   
   .course-paragraph {
@@ -106,6 +111,7 @@
     align-items: center;
     margin: 10px 0;
     padding: 0px 10px;
+    color:#34495E
   }
   
   .paragraph-icon {
@@ -142,7 +148,7 @@
   .course-button {
     padding: 10px 20px;
     background-color: #f4f4f4;
-    color: #0c2b56;
+    color: #34495E;
     border: none;
     border-radius: 8px;
     cursor: pointer;

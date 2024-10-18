@@ -64,7 +64,7 @@
   }
   
   .projects-c--image {
-    width: 100%;
+    width: 40%;
     height: 100%;
     object-fit: cover;
     border-radius: 0.75rem; /* Rounded-xl */
@@ -133,4 +133,18 @@
       grid-row: span 1;
     }
   }
+.img-project{
+  height: 216px;
+  width:90%
+}  
+.intrinsic-img {
+  object-fit: cover;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+  
   

@@ -3,16 +3,18 @@ import './Courses.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { FaShareAlt, FaDollarSign, FaTag ,FaRupeeSign} from 'react-icons/fa'; // Example icons
+import { FaShareAlt, FaDollarSign, FaTag } from 'react-icons/fa'; // Example icons
 import { MdStar } from 'react-icons/md'; // Example icons
 import { CgProfile } from "react-icons/cg";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import { IoIosShareAlt } from "react-icons/io";
 import { FaArrowRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar/Navbar.js';
 import Footer from './Footer.js';
-import CoursesImages from "../Images/courses.png"
+import { Typography } from '@mui/material';
+
+import Courses from "../Images/courses.png"
 
 
 
@@ -38,45 +40,60 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
+const copyToClipboardCourse = () => {
+  // Check if the browser supports the clipboard API
+  if (navigator.clipboard) {
+    // Get the current URL
+    const currentURL = window.location.href;
+
+    // Use the clipboard API to copy the URL to the clipboard
+    navigator.clipboard.writeText(currentURL).then(() => {
+      alert('Link copied to clipboard!');
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
+  } else {
+    // Fallback for browsers that don't support the clipboard API
+    alert('Your browser does not support clipboard copying.');
+  }
+};
 
 const CourseBox = ({ image, heading, paragraphs, price, priceStrikethrough, discount }) => (
   
-  <div className="course-box" 
-  // onClick={()=>{
-
-  //   ("/courses-details")
-  // }}
-  >
-    <img src={image} alt={heading} className="course-image" />
-    <h1 className="course-heading">
-      {heading}
-    </h1>
-    <div className="course-paragraphs">
-      {paragraphs.map((text, idx) => (
-        <p key={idx} className="course-paragraph">
-          <CgProfile className="paragraph-icon" /> {text}
+    <div className="course-box" 
+    
+    >
+      <img src={image} alt={heading} className="course-image" />
+      <h1 className="course-heading">
+        {heading} 
+         {/* <IoIosShareAlt onClick={copyToClipboardCourse} className="share-icon" /> */}
+      </h1>
+      <div className="course-paragraphs">
+        {paragraphs.map((text, idx) => (
+          <p key={idx} className="course-paragraph">
+            <CgProfile className="paragraph-icon" /> {text}
+          </p>
+        ))}
+      </div>
+  
+      <hr style={{ width:'70%', margin:'auto', marginTop:'15px',}} />
+  
+      <div className="course-price-info">
+        <h6 className="price">
+          <FaDollarSign className="price-icon" /> {price}
+        </h6>
+        <p className="price-strikethrough" style={{padding:"0px 1px",marginTop:"-1px"}}>
+           {priceStrikethrough}
         </p>
-      ))}
+        <h6 className="discount">
+          <RiDiscountPercentFill className="discount-icon" /> <span style={{color:'green'}}>{discount} {" "}Discount</span>
+        </h6>
+      </div>
+      <button className="course-button">Explore</button>
     </div>
+  );
 
-    <hr style={{ width:'70%', margin:'auto', marginTop:'15px',}} />
-
-    <div className="course-price-info">
-      <h6 className="price">
-        <FaRupeeSign className="price-icon" /> {price}
-      </h6>
-      <p className="price-strikethrough" style={{padding:"0px 1px",marginTop:"-1px"}}>
-         {priceStrikethrough}
-      </p>
-      <h6 className="discount">
-        <RiDiscountPercentFill className="discount-icon" /> <span style={{color:'green'}}>{discount} {" "}Discount</span>
-      </h6>
-    </div>
-    <button className="course-button">Explore</button>
-  </div>
-);
-
-const Courses = () => {
+const CoursesDetails = () => {
   const [value, setValue] = React.useState(0);
   const navigate=useNavigate()
 
@@ -89,8 +106,8 @@ const Courses = () => {
   const tabContents = {
     0: [ // Bootcamp tab
       {
-        image: CoursesImages,
-        heading: 'Data Science With Gen AI',
+        image: Courses,
+        heading: 'Data Science With Gen AI ',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
           'Key features of Data Science Master Pro 2024.',
@@ -100,34 +117,11 @@ const Courses = () => {
         priceStrikethrough:'85000',
         discount: '90%'
       },
-      // {
-      //   image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
-      //   heading: 'Data Science Master Pro 2021',
-      //   paragraphs: [
-      //     'Detailed explanation of Data Science Master Pro 2024.',
-      //     'Key features of Data Science Master Pro 2024.',
-      //     'college students & Working Professional'
-      //   ],
-      //   price: '8000.00',
-      //   priceStrikethrough: '10000.00',
-      //   discount: '70%'
-      // },
-      // {
-      //   image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
-      //   heading: 'Data Science Master Pro 2023',
-      //   paragraphs: [
-      //     'Detailed explanation of Data Science Master Pro 2024.',
-      //     'Key features of Data Science Master Pro 2024.',
-      //     'college students & Working Professional'
-      //   ],
-      //   price: '8000.00',
-      //   priceStrikethrough: '10000.00',
-      //   discount: '50%'
-      // }
+     
     ],
     1: [ 
       {
-        image: './images/Courses--01.png',
+        image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
         heading: 'Data Science Master Pro 2022',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
@@ -139,7 +133,7 @@ const Courses = () => {
         discount: '50%'
       },
       {
-        image: './images/Courses--01.png',
+        image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
         heading: 'Data Science Master Pro 2020',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
@@ -151,7 +145,7 @@ const Courses = () => {
         discount: '40%'
       },
       {
-        image: './images/Courses--02.png',
+        image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
         heading: 'Data Science Master Pro 2022',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
@@ -165,7 +159,7 @@ const Courses = () => {
     ],
     2: [ 
       {
-        image: './images/Courses--02.png',
+        image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
         heading: 'Data Science Master Pro 2019',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
@@ -177,7 +171,7 @@ const Courses = () => {
         discount: '50%'
       },
       {
-        image: './images/Courses--01.png',
+        image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
         heading: 'Data Science Master Pro 2020',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
@@ -189,7 +183,7 @@ const Courses = () => {
         discount: '40%'
       },
       {
-        image: './images/Courses--02.png',
+        image: 'https://ineuron.ai/_next/image?url=https%3A%2F%2Fcdn.ineuron.ai%2Fassets%2Fuploads%2Fthumbnails%2F6613a058894c1923451545f2.jpg&w=384&q=75',
         heading: 'Data Science Master Pro 2014',
         paragraphs: [
           'Detailed explanation of Data Science Master Pro 2024.',
@@ -201,21 +195,45 @@ const Courses = () => {
         discount: '30%'
       }
     ]
+    
   };
+  
 
   return (
     <>
-      <header className="header mt-3" id='courses'>
-        <h2 className="title">Our Courses</h2>
+    <Navbar/>
+    
+      <header className="header mt-3 d-inline" id='courses'>
+      <div style={{width:"80%",margin:"auto",marginTop:"20px"}}>
+      <Typography variant="body2" gutterBottom>
+      {/* Home link */}
+      <Link to="/" style={{ color: "black", textDecoration: "none" }}>
+        <span role="img" aria-label="home">🏠</span> Home
+      </Link>
+      
+      {" > "} 
+
+      {/* Courses link */}
+      <Link to="/courses/details" style={{ color: "black", textDecoration: "none" }}>
+        Courses
+      </Link>
+      
+
+      {/* Data Science link (stays on the same page, so no Link needed) */}
+    </Typography>
+    <h2 className="title">Our Courses </h2>
+       <p stlye={{color:"#34495E"}}>Explore cutting-edge programs in emerging technologies designed to equip students with essential skills. Learn from experienced mentors who offer practical knowledge and valuable insights from the industry, preparing you for future opportunities.</p>
+
+    </div>
         
-        <a aria-label="View All Courses" href="/courses/details" style={{textDecoration:'none'}}>
-          <button className="view-all-button" onClick={()=>{
-            navigate("/courses/details")
-          }} style={{border:"none",boxShadow:"none"}} type="">
+        {/* <a aria-label="View All Courses" href="/courses" style={{textDecoration:'none'}}>
+          <button className="view-all-button" type="link">
             View all <FaArrowRight className="arrow-icon" />
           </button>
-        </a>
+        </a> */}
       </header>
+     
+      
 
       <Box sx={{ width: '80%',margin:'auto' }}>
         {/* <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -251,8 +269,9 @@ const Courses = () => {
           </div>
         </CustomTabPanel>
       </Box>
+      <Footer/>
     </>
   );
 }
 
-export default Courses;
+export default CoursesDetails;

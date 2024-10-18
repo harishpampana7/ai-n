@@ -1,0 +1,12 @@
+.choose{
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    width: 80%;
+    color:#34495E
+}
+.stats-text .stats-description1{
+    color:#34495E
+
+}

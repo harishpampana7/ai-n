@@ -23,11 +23,15 @@
   .hero-text h1 {
     font-size: 2rem;
     margin-bottom: 10px;
+    color:#34495E
+
   }
   
   .hero-text p {
     font-size: 1rem;
     margin-bottom: 20px;
+    color:#34495E
+
   }
   
   .hero-text button {
@@ -144,14 +148,17 @@
   }
   
   .stats-title {
-    font-size: 1.125rem; 
+    text-align: center;
+    font-size: 1.10rem; 
     font-weight: bold;
-    color: #4a4a4a; 
+    color: #34495E; 
   }
   
   .stats-description {
-    font-size: 0.75rem; 
-    color: #4a4a4a; 
+    font-size: 0.95rem; 
+    color: #34495E; 
+    font-weight: 700;
+    margin: auto
   }
   
   
@@ -170,7 +177,7 @@
   
   @media (min-width: 1024px) {
     .stats-box {
-      width: 16%; 
+      width: 20%; 
     }
 
     .hero-section {

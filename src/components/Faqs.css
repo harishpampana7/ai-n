@@ -3,6 +3,10 @@
     width: 80%;
     margin: auto;
     align-items: center;
+    color:#34495E
+}
+* body{
+    color:#34495E
 }
 
 .css-nt424e-MuiPaper-root-MuiAccordion-root {
@@ -19,3 +23,6 @@
     overflow-anchor: none;
     border-radius: 0;
 }
+/* #panel1-header{
+    color:#393B43
+} */

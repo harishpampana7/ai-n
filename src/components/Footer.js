@@ -11,12 +11,14 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import "./Footer.css"; // Import the CSS file for styling
+import Logo2 from "../Images/Logo.png"
+
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer mt-3">
       <div className="footer-box1">
-        <img src="./images/in-logo.png" alt="Logo" className="footer-logo" />
+        <img src={Logo2} alt="Logo" className="footer-logo" />
         <div className="contact-info">
           <div className="contact-item">
             <FaEnvelope className="contact-icon" />
@@ -58,7 +60,7 @@ const Footer = () => {
         <div className="footer-br-div">
           <div>
             <p>
-              <a href="#">About us</a>
+              <a href="/About">About us</a>
             </p>
             <p>
               <a href="#">Contact us</a>
@@ -68,11 +70,11 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <p>
+            {/* <p>
               <a href="#">Certificate verification</a>
-            </p>
+            </p> */}
             <p>
-              <a href="#">Privacy policy</a>
+              <a href="/PrivacyPolicy">Privacy policy</a>
             </p>
             <p>
               <a href="#">Terms and conditions</a>
@@ -80,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-box3">
+      {/* <div className="footer-box3">
         <h3>Products</h3>
         <hr className="footer-hr-heading" />
         <div className="footer-br-div">
@@ -113,7 +115,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };
